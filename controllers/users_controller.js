@@ -30,11 +30,11 @@ module.exports.create=function(req,res){
         return res.redirect('back');
     }
 
-    User.findOne({email: req.body.email},function(err,user){
+    profile.findOne({email: req.body.email},function(err,user){
         if(err){console.log('error is finding user in signing up');return }
 
         if(!user){
-            User.create(req.body,function(err,user){
+            profile.create(req.body,function(err,user){
                 if(err){console.log('error in creating user while signing up');return}
 
 
