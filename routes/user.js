@@ -14,7 +14,7 @@ router.post('/create',userController.create);
 //use passport as middleware to uthenticate
 router.post('/create-session',passport.authenticate(
     'local',
-    {failureRedirect:'users/sign-in'},
+    {failureRedirect:'/users/sign-in'},
 ),userController.createSession);
 module.exports=router;
 
