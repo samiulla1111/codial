@@ -24,13 +24,15 @@ app.use(sassMiddleware({
     outputStyle:'expanded',
     prefix:'/css'
 }));
-
+app.use('/uploads',express.static(__dirname +'/uploads'));
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 app.use(express.static('./assets'));
+//make the upload path is available to the browser
+
 
 
 
